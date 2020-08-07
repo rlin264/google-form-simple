@@ -1,1 +1,31 @@
 @import url("https://unpkg.com/primitive-ui/dist/css/main.css");
+.nav-hor{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.nav-hor li{
+    float: left;
+}
+
+.nav-hor li a{
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-hor li a:hover {
+    background-color: #111;
+}
+  
+.nav-hor .active {
+background-color: rgb(0, 153, 255);
+}

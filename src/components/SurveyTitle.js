@@ -20,7 +20,7 @@ export default function SurveyTitle({ title, handleChangeTitle, preview=false })
         )}
       </Heading>
       {!preview ? (
-        <button onClick={toggleEditing}>
+        <button onClick={toggleEditing} style={{"margin-right":"1vh"}}>
         {editing ? (
           <>
             <FontAwesomeIcon icon={["fas", "save"]} fixedWidth />

@@ -1,3 +1,5 @@
+import mongoose from 'mongoose'
+
 export default class Question {
     static TYPES = Object.freeze({
       MCHOICE: "Multiple Choice",
@@ -17,7 +19,7 @@ export default class Question {
       this.text = text;
       this.type = type;
       this.options = options;
-      this.id = id || Math.random();
+      this.id = id || mongoose.Types.ObjectId();
     }
   
     //returns whether the questiontype has options or not (i.e is it multiple choice)
@@ -41,4 +43,3 @@ export default class Question {
       return new Question({ ...this, ...patch });
     }
   }
-  
