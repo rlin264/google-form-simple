@@ -6,7 +6,10 @@ const SurveyItem = props => (
     <tr>
       <td>{props.survey.name}</td>
       <td>
-        <Link to={"/edit/"+props.survey._id}>edit</Link> |  <Link to={"/"+props.survey._id}>view form</Link> | <a href="#" onClick={() => { props.deleteSurvey(props.survey._id) }}>delete</a>
+        <Link to={"/edit/"+props.survey._id}>edit</Link> 
+        {" | "}  <Link to={"/"+props.survey._id}>view form</Link> 
+        {" | "}  <Link to={"/responses/"+props.survey._id}>view responses</Link> 
+        {" | "} <a href="#" onClick={() => { props.deleteSurvey(props.survey._id) }}>delete</a>
       </td>
     </tr>
   )
@@ -20,7 +23,6 @@ export default class SurveyList extends React.Component {
   
       this.state = {surveys: []};
     }
-  
     componentDidMount() {
       axios.get('http://localhost:5000/surveys/')
         .then(response => {
@@ -39,6 +41,10 @@ export default class SurveyList extends React.Component {
         .catch((error) => {
           console.log(error);
         })
+    }
+
+    componentWillUnmount(){
+      
     }
   
   

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {useHistory} from "react-router-dom";
 import axios from "axios";
 import SurveyTitle from "./SurveyTitle";
 import DisplayQuestion from "./DisplayQuestion";
@@ -12,6 +13,7 @@ export default function SurveyView(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [fieldsValues, setFieldsValues] = useState({});
 
+  const history = useHistory()
   const handleFieldChange = (val, fieldId) => {
     let newFields = { ...fieldsValues };
     newFields[fieldId] = val;
@@ -50,10 +52,24 @@ export default function SurveyView(props) {
 
   function onSubmit(){
       console.log("ASD");
+      console.log(fieldsValues)
+      const response = {
+        survey: props.match.params.id,
+        responses: fieldsValues
+      };
+      console.log(response)
+      axios
+        .post(
+          "http://localhost:5000/responses/add/",
+          response
+        )
+        .then((res) => {
+          console.log(res.data)
+          history.goBack()
+        });
       /*
       TODO: Edit router to allow retrieval of user responses
-      TODO: Allow submission of responses
-      TODO: Display answers to questions using question id and survey id (props.match.params.id)
+      TODO: Display answers to questions on a separate page using question id and survey id (props.match.params.id)
       */
   }
 

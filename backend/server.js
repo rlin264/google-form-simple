@@ -20,8 +20,10 @@ connection.once('open', ()=>{
 })
 
 const surveysRouter = require('./routes/surveys');
+const responsesRouter = require('./routes/responses');
 
 app.use('/surveys', surveysRouter);
+app.use('/responses', responsesRouter);
 
 app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);

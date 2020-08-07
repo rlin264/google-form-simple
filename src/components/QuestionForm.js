@@ -1,7 +1,7 @@
 import React from "react";
 import Question from "../models/Question";
 import ListController from "../controllers/ListController";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 export default function QuestionForm({ question, setQuestion }) {
@@ -22,22 +22,38 @@ export default function QuestionForm({ question, setQuestion }) {
   return (
     <div>
       <label>Question Text:</label>
-      <input type="text" value={question.text} onChange={handleChangeText} />
+      <div
+        style={{
+          background: "white",
+          margin: "0vh 5vh",
+          "border-radius": "4px",
+        }}
+      >
+        <input type="text" value={question.text} onChange={handleChangeText} />
+      </div>
 
       <label htmlFor="question-type">Question Type:</label>
-      <select
-        id="question-type"
-        value={question.type}
-        onChange={handleChangeType}
+      <div
+        style={{
+          background: "white",
+          margin: "0vh 5vh",
+          "border-radius": "4px",
+        }}
       >
-        {Object.values(Question.TYPES).map(type => (
-          <option key={type} value={type}>
-            {type}
-          </option>
-        ))}
-      </select>
+        <select
+          id="question-type"
+          value={question.type}
+          onChange={handleChangeType}
+        >
+          {Object.values(Question.TYPES).map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      {(question.hasOptions || question.hasDropdown)   && (
+      {(question.hasOptions || question.hasDropdown) && (
         <fieldset>
           <legend>Options</legend>
 
@@ -46,9 +62,12 @@ export default function QuestionForm({ question, setQuestion }) {
               <input
                 type="text"
                 placeholder="Enter option"
+                style={{
+                  background: "white",
+                }}
                 name={option}
                 value={option}
-                onChange={e => listController.set(i, e.target.value)}
+                onChange={(e) => listController.set(i, e.target.value)}
               />
               <Buttons>
                 <Button onClick={() => listController.moveUp(i)}>
@@ -77,7 +96,7 @@ export default function QuestionForm({ question, setQuestion }) {
 
 const Option = styled.div`
   display: flex;
-`
+`;
 
 const Buttons = styled.div`
   display: flex;
@@ -85,7 +104,7 @@ const Buttons = styled.div`
 `;
 
 const Button = styled.button`
-  background: none;
+  background: white;
   color: #0366ee;
   margin-left: 0.2em;
   &:focus {

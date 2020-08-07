@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import SurveyBuilder from './components/SurveyBuilder'
 import SurveyView from './components/SurveyView'
+import ResponseView from'./components/ResponseView'
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,6 +20,7 @@ function App() {
         </ul>
       <Switch>
           <Route path="/edit/:id" component={SurveyBuilder} />
+          <Route path="/responses/:id" component={ResponseView} />
           <Route path="/:id" component={SurveyView} />
           <Route path="/survey">
             <Survey />

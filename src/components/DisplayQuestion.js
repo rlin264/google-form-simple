@@ -12,7 +12,7 @@ export default function DisplayQuestion({question, id, handleFieldChange}){
       } else {
         setSet(set.add(e.target.value))
       }
-      handleFieldChange(set, id)
+      handleFieldChange(Array.from(set), id)
       // console.log(set);
     }
     return(

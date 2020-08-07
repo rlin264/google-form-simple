@@ -17,7 +17,7 @@ export default function SurveyQuestion({
   }
 
   return (
-    <QuestionField>
+    <QuestionField style={{background : editing ? 'rgba(80,167,217,0.4)' : 'none'}}>
       {editing ? (
         <QuestionForm question={question} setQuestion={setQuestion} />
       ) : (

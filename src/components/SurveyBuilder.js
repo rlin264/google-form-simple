@@ -71,14 +71,16 @@ export default function SurveyBuilder(props) {
   const listController = new ListController(questions, setQuestions);
 
   return (
-    <div>
+    <div >
       {isLoaded && (
         <div>
           <div>
             <button
               onClick={togglePreview}
               style={{
+                position: "absolute",
                 float: "right",
+                right: "0",
                 "margin-top": "3.7vh",
                 "margin-right": "1vh",
               }}
@@ -98,7 +100,7 @@ export default function SurveyBuilder(props) {
           </div>
           <div></div>
           {preview ? (
-            <div className="small-container">
+            <div className="small-container" style={{"alignItems":"center"}}>
               <SurveyTitle
                 title={title}
                 handleChangeTitle={handleChangeTitle}
@@ -111,7 +113,7 @@ export default function SurveyBuilder(props) {
               </ol>
             </div>
           ) : (
-            <div className="small-container">
+            <div className="small-container" style={{"alignItems":"center"}}>
               <SurveyTitle
                 title={title}
                 handleChangeTitle={handleChangeTitle}

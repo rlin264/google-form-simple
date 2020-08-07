@@ -42,12 +42,12 @@ export default function SurveyTitle({ title, handleChangeTitle, preview=false })
 }
 
 const Title = styled.div`
-  display: flex;
+  // display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 const Heading = styled.h1`
-  flex: 1 0;
+  // flex: 1 0;
   margin-right: 0.3em;
 `;
