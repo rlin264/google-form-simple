@@ -4,7 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-To run the app, first start the backend from the project directory with:
+To run the app, first install the necessary packages with:
+
+### `npm install`
+
+Then start the backend from the project directory with:
 
 ### `node backend/server.js`
 
