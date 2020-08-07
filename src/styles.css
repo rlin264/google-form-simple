@@ -1,4 +1,5 @@
 @import url("https://unpkg.com/primitive-ui/dist/css/main.css");
+@import url('https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css');
 .nav-hor{
     list-style-type: none;
     margin: 0;
@@ -8,6 +9,7 @@
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 .nav-hor li{
@@ -29,3 +31,4 @@
 .nav-hor .active {
 background-color: rgb(0, 153, 255);
 }
+

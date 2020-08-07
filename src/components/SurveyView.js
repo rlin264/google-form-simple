@@ -82,11 +82,11 @@ export default function SurveyView(props) {
             handleChangeTitle={handleChangeTitle}
             preview={true}
           />
-          <ol>
+          <div>
             {questions.map((question, i) => (
               <DisplayQuestion key={i} id = {question.id} question={question} handleFieldChange={handleFieldChange} />
             ))}
-          </ol>
+          </div>
           <button onClick={onSubmit}>Submit</button>
         </div>
       )}

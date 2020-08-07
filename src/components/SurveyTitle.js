@@ -49,5 +49,5 @@ const Title = styled.div`
 
 const Heading = styled.h1`
   // flex: 1 0;
-  margin-right: 0.3em;
+  // margin-right: 0.3em;
 `;

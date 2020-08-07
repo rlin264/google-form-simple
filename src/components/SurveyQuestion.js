@@ -22,7 +22,7 @@ export default function SurveyQuestion({
         <QuestionForm question={question} setQuestion={setQuestion} />
       ) : (
         <>
-          <p>{question.text}</p>
+          <h3 style={{"fontWeight":"normal"}}>{question.text}</h3>
           <form>
           {question.hasOptions ? (
             question.options.map((option, i) => (
@@ -39,6 +39,7 @@ export default function SurveyQuestion({
             ))
           ) : question.hasDropdown ? (
             <select>
+              <option value="" disabled selected>Select your option</option>
               {question.options.map((option, i) =>(
                   <option key={i} value={option}>{option}</option>
               ))}
@@ -80,7 +81,7 @@ export default function SurveyQuestion({
   );
 }
 
-const QuestionField = styled.li`
+const QuestionField = styled.div`
   margin-top: 1em;
   border-top: #ddd solid 1.5px
   padding-bottom: 1.5em;

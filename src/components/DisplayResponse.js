@@ -25,9 +25,9 @@ function printArr(arr){
 }
   return (
     <QuestionField>
-      <p>{question.text}</p>
+      <h3 style={{"fontWeight":"normal"}}>{question.text}</h3>
       {hasResponses && (
-        <div>
+        <div style={{"borderRadius":"4px",  "border": "1px solid gray", "max-height":"15vh", "overflow-y":"scroll"}}>
           {responses.map((response, i) => (
             <div>
               {question.hasOptions ? (
@@ -51,7 +51,7 @@ function printArr(arr){
   );
 }
 
-const QuestionField = styled.li`
+const QuestionField = styled.div`
   margin-top: 1em;
   border-top: #ddd solid 1.5px
   padding-bottom: 1.5em;

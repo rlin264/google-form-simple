@@ -79,7 +79,7 @@ export default function ResponseView(props) {
       {isLoaded && hasResponses && (
         <div className="small-container">
           <SurveyTitle title={title} preview={true} />
-          <ol>
+          <div>
             {questions.map((question, i) => (
               <DisplayResponse
                 key={i}
@@ -91,7 +91,7 @@ export default function ResponseView(props) {
                 handleFieldChange={handleFieldChange}
               />
             ))}
-          </ol>
+          </div>
           <button onClick={onSubmit}>Back</button>
         </div>
       )}

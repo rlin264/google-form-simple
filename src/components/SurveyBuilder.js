@@ -81,6 +81,7 @@ export default function SurveyBuilder(props) {
                 position: "absolute",
                 float: "right",
                 right: "0",
+                clear: "both",
                 "margin-top": "3.7vh",
                 "margin-right": "1vh",
               }}
@@ -106,11 +107,11 @@ export default function SurveyBuilder(props) {
                 handleChangeTitle={handleChangeTitle}
                 preview={true}
               />
-              <ol>
+              <div>
                 {questions.map((question, i) => (
                   <DisplayQuestion question={question} />
                 ))}
-              </ol>
+              </div>
             </div>
           ) : (
             <div className="small-container" style={{"alignItems":"center"}}>
@@ -119,7 +120,7 @@ export default function SurveyBuilder(props) {
                 handleChangeTitle={handleChangeTitle}
               />
 
-              <ol>
+              <div>
                 {questions.map((question, i) => (
                   <SurveyQuestion
                     key={question.id}
@@ -130,7 +131,7 @@ export default function SurveyBuilder(props) {
                     moveQuestionDown={() => listController.moveDown(i)}
                   />
                 ))}
-              </ol>
+              </div>
               <button onClick={() => listController.add(new Question())}>
                 <FontAwesomeIcon icon={["fas", "plus"]} fixedWidth />
                 Add Question
